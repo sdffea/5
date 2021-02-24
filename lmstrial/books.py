@@ -28,9 +28,9 @@ class Books:
                                                   self.language)
     @classmethod
     def newcopy(cls, isbn):
-        with CursorFromConnectionFromPool() as cursor:
-            cursor.execute("select COUNT(*) FROM public.books where isbn=%s;", (isbn,))
-            rowcount = cursor.fetchone()[0]
+        with CursorFromConnectionFromPool() as crsor:
+            crsor.execute("select COUNT(*) FROM public.books where isbn=%s;", (isbn,))
+            rowcount = crsor.fetchone()[0]
             return rowcount
     @classmethod
     def newisbn(cls, name, author, publisher, language,edition):
