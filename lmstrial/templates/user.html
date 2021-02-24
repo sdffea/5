@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}User{% endblock %}
+{% block content %}
+    {% with messages=get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p>{{ msg }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    {% if message %}
+        <p>{{ message }}</p>
+        <img src="../static/images/issuebook.jpg" alt="{{ message }}" width="500" height="500">
+    {% else %}
+        <br>
+        <p>You have issued a book which will due on <b>{{ date }}</b>.</p><br>
+        <p>Please return that book to <b>{{ branchname }}</b> at <b>{{ branchaddress }}</b> on the due date</p><br>
+        <p>The book you have issued is <b>{{ name }}</b> by <b>{{ author }}</b></p>
+    {% endif %}
+{% endblock %}

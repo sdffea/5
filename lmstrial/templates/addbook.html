@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}
+    Add Book
+{% endblock %}
+{% block styling %}
+    button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+
+    }
+{% endblock %}
+{% block content %}
+    <form action="#" method="post">
+
+        <br>
+        <div class="container">
+            <label for="name"><b>Add Name</b></label>
+            <input type="text" placeholder="Name" name="name" required/>
+            <br><br>
+
+
+            <label for="author"><b>Add Author</b></label>
+            <input type="text" placeholder="Author" name="author" required/>
+
+            <br><br>
+            <label for="language"><b>Add Language</b></label>
+            <input type="text" placeholder="Language" name="language" required/>
+
+            <br><br>
+            <label for="publisher"><b>Add Publisher</b></label>
+            <input type="text" placeholder="Publisher" name="publisher" required>
+            <br><br>
+            <label for="branch"><b>Add Branch</b></label>
+            <input type="text" placeholder="Publisher" name="branch" required>
+            <br><br>
+            <label for="edition"><b>Add Edition</b></label>
+            <input type="text" placeholder="Edition" name="edition" required>
+            <br><br>
+            <label for="copy"><b>Add number of copies</b></label>
+            <input type="number" placeholder="copies" name="copy" required/>
+            <br><br>
+            <button type="submit" value="submit">Add Book</button>
+        </div>
+        <div class="container" style="background-color:#f1f1f1">
+
+        </div>
+    </form>
+{% endblock %}

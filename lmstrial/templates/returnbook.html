@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}
+    Return Book
+{% endblock %}
+{% block styling %}
+    button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+
+    }
+{% endblock %}
+{% block content %}
+    <form action="#" method="post">
+
+        <br>
+        <div class="container">
+            <label for="isbn"><b>Add ISBN</b></label>
+            <input type="text" placeholder="ISBN" name="isbn" required/>
+            <br><br>
+
+
+            <label for="email"><b>Add email</b></label>
+            <input type="email" placeholder="email" name="email" required/>
+
+
+            <button type="submit" value="submit">Return Book</button>
+        </div>
+        <div class="container" style="background-color:#f1f1f1">
+
+        </div>
+    </form>
+        {% with messages=get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p>{{ msg }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+{% endblock %}

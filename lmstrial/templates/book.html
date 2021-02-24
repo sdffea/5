@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+{% block styling %}
+    .serif {
+    font-family: "Times New Roman", Times, serif;
+    }
+    button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+
+    }
+{% endblock %}
+{% block content %}
+    <br><br><br>
+
+    <center><img src="../static/images/bookplaceholderreplace.png" alt="placeholderbook"></center>
+    <br><br><br>
+    <center>
+
+        <table width="40%">
+            <tr>
+                <td align="center">
+                    <h5><p class="serif">{{ name }}</p></h5>
+                </td>
+                <td align="center">
+                    <h5><p class="serif">{{ author }}</p></h5>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <h5><p class="serif">{{ language }}</p></h5>
+                </td>
+                <td align="center">
+                    <h5><p class="serif">{{ edition }}</p></h5>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <h5><p class="serif">{{ publisher }}</p></h5>
+                </td>
+                <td align="center">
+                    <h5><p class="serif">{{ isbn }}</p></h5>
+                </td>
+            </tr>
+        </table>
+
+
+        {% with messages=get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                    <p>{{ msg }}</p>
+                {% endfor %}
+            {% else %}
+                <form action="#" method="post">
+                    <div class="container">
+                        <button type="submit" value="submit">Issue</button>
+                    </div>
+                </form>
+            {% endif %}
+        {% endwith %}
+
+
+    </center>
+
+{% endblock %}
+

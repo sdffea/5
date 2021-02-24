@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}
+    Search
+{% endblock %}
+{% block styling %}
+    button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+
+    }
+{% endblock %}
+{% block content %}
+    <form action="#" method="post">
+
+        <br>
+        <div class="container">
+            <label for="name"><b>Search By Name</b></label>
+            <input type="text" placeholder="Search By Name" name="name"/>
+            <br><br>
+
+            <label for="isbn"><b>Search By ISBN</b></label>
+            <input type="text" placeholder="ISBN" name="isbn"/>
+            <br><br>
+            <label for="author"><b>Search By Author</b></label>
+            <input type="text" placeholder="Author" name="author"/>
+
+            <br><br>
+            <label for="language"><b>Search By Language</b></label>
+            <input type="text" placeholder="Language" name="language"/>
+
+            <br><br>
+            <label for="publisher"><b>Search By Publisher</b></label>
+            <input type="text" placeholder="Publisher" name="publisher"/>
+            <br><br>
+            <label for="edition"><b>Search by Edition</b></label>
+            <input type="text" placeholder="Edition" name="edition">
+            <br><br>
+            <button type="submit" value="submit">Search</button>
+        </div>
+        <div class="container" style="background-color:#f1f1f1">
+
+        </div>
+    </form>
+    <center>
+
+        {% for item in resultsr %}
+            <tr>
+
+                <td><a href="{{ item[0][1:14] }}" onclick="book({{ item[0][1:14] }})"> {{ item[0].strip('"()')}}</a> </td>
+                </br>
+            </tr>
+        {% endfor %}
+    </center>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}

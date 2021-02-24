@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}
+    Login Page
+{% endblock %}
+{% block styling %}
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+
+}
+{% endblock %}
+{% block content %}
+    {% with messages=get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p>{{ msg }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form action="#" method="post">
+
+        <br>
+        <div class="container">
+
+            <label for="email"><b>Email&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</b></label>
+            <input type="email" placeholder="Email" name="email" required/>
+            <br><br>
+            <label for="psw"><b>Password&emsp;&emsp;&nbsp;&nbsp;</b></label>
+            <input type="password" placeholder="Password" name="psw" required/>
+
+            <br><br>
+            <button type="submit" value="submit">Login</button>
+        </div>
+        <div class="container" style="background-color:#f1f1f1">
+
+        </div>
+    </form>
+{% endblock %}
